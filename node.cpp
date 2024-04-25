@@ -7,11 +7,11 @@ struct Node {
     Node* next;
 };
 
-Node* START = NULL
+Node* START = NULL;
 
 void addNode(){
     int nim;
-    string namespace
+    string nama;
     Node* nodeBaru =new Node();
     cout << "Masukan NIM: ";
     cin >> nim;
@@ -26,17 +26,16 @@ void addNode(){
             cout << "NIM sudah ada" << endl;
             return;
         }
+         nodeBaru->next = START;
+         START = nodeBaru;
+         return;
+        
     }
-
-    nodeBaru->next = SMART;
-    START = nodeBaru;
-    return;
-
     
-Node* Previous = START;
-Node* current = START;
+    Node* previous = START;
+    Node* current = START;
 
-while ((current != NULL) && (nim >= current ->noMhs))
+    while ((current != NULL) && (nim >= current ->noMhs))
     {
         if (nim == current->noMhs)
         {
@@ -46,4 +45,7 @@ while ((current != NULL) && (nim >= current ->noMhs))
         previous = current;
         current = current->next;
     }
+
+    nodeBaru->next = current;
+    previous->next = nodeBaru;
 }
