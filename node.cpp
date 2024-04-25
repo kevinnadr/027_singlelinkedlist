@@ -105,3 +105,6 @@ void traverse() {
 		}
 	}
 }
+
+void searchData() {
+	
